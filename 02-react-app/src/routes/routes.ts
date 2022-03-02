@@ -1,5 +1,4 @@
 import { lazy, LazyExoticComponent } from 'react';
-import { LazyPage1, LazyPage2, LazyPage3 } from '../01-lazyload/pages';
 
 type JSXComponent = () => JSX.Element;
 interface Route {
@@ -9,6 +8,13 @@ interface Route {
   name: string;
 }
 
+/**
+ * Con webpack puedo cambiar el nombre del chunk
+ * que es el archivo build que se genera
+ * Manera de hacerlo  abajo
+ */
+
+// const Lazy2 = lazy(() => import(/* webpackChunkName: "Lazy2Page" */ '../01-lazyload/pages/LazyPage2'));
 const Lazy1 = lazy(() => import('../01-lazyload/pages/LazyPage1'));
 const Lazy2 = lazy(() => import('../01-lazyload/pages/LazyPage2'));
 const Lazy3 = lazy(() => import('../01-lazyload/pages/LazyPage3'));
