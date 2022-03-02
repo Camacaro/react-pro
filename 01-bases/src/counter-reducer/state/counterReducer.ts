@@ -1,0 +1,24 @@
+import { CounterAction } from "../actions/actions";
+import { CounterState } from "../interfaces/interface";
+
+export const counterReducer = (state:CounterState, action:CounterAction): CounterState => {
+  switch (action.type) {
+    case 'reset':
+      return {
+        changes: 0,
+        counter: 0,
+        previous: 0,
+      }
+
+    case 'increaseBy':
+      return {
+        ...state,
+        counter: state.counter + action.payload.value,
+        previous: state.counter,
+        changes: state.changes + 1,
+      }
+  
+    default:
+      return state;
+  }
+}
