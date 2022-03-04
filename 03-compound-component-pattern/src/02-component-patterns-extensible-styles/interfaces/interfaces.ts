@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 export interface ProductCardProps {
   product: Product
   children?: ReactElement | ReactElement[],
+  className?: string
 }
 
 export interface Product {
@@ -22,9 +23,19 @@ export interface ProductButtonsProps {
   counter: number
 }
 
+export interface ProductTitleProps { 
+  title?:string, 
+  className?:string 
+}
+
+export interface ProductImageProps {
+  img?: string,
+  className?: string
+}
+
 export interface ProductCardHOCProps {
   ({ product, children }: ProductCardProps): JSX.Element;
-  Title: ({ title }: {title?: string}) => JSX.Element;
-  Image: ({ img }: {img?: string}) => JSX.Element;
+  Title: ({ title, className }: ProductTitleProps) => JSX.Element;
+  Image: ({ img }: ProductImageProps) => JSX.Element;
   Buttons: () => JSX.Element;
 }
