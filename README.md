@@ -12,3 +12,5 @@ La idea del módulo es que nos permita cargarlo y todas sus dependencias en conj
 
 ## 03 Compound Component Pattern
 En esta sección aprenderemos el patrón de construcción de componentes llamado "Compound Component Pattern" el cual es muy usado por Material UI, ionic y muchos otros que trabajan con componentes previamente creados que se pueden anidar entre si mediante HOCs (Higher Order Components)
+
+### 03 Compound Component Pattern - Extensible Styles
