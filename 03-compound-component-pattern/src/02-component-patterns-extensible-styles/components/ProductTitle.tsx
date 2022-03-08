@@ -3,12 +3,12 @@ import { useProductContext } from "./ProductCard";
 
 import styles from '../styles/styles.module.css';
 
-export const ProductTitle = ({ title, className }: ProductTitleProps) => {
+export const ProductTitle = ({ title, className, style }: ProductTitleProps) => {
   const { product } = useProductContext()
 
   const titleShow = title ? title : product.title
   
   return (
-    <span className={`${styles.productDescription} ${className}`} > {titleShow} </span>
+    <span className={`${styles.productDescription} ${className}`} style={style}> {titleShow} </span>
   )
 }

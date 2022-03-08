@@ -3,11 +3,11 @@ import { ProductButtonsProps } from "../interfaces/interfaces";
 
 import styles from '../styles/styles.module.css';
 
-export const ProductButtons = ({ className }: ProductButtonsProps) => {
+export const ProductButtons = ({ className, style }: ProductButtonsProps) => {
   const { increaseBy, counter } = useProductContext()
 
   return (
-    <div className={`${styles.buttonsContainer} ${className}`}>
+    <div className={`${styles.buttonsContainer} ${className}`} style={style}>
       <button 
         className={styles.buttonMinus} 
         onClick={() => increaseBy(-1)}
