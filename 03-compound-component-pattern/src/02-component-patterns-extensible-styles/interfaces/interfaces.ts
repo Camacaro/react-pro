@@ -17,15 +17,10 @@ export interface ProductContextProps {
   counter: number,
   increaseBy: (value:number) => void
 }
-
-export interface ProductButtonsProps {
-  increaseBy: (counter: number) => void
-  counter: number
-}
-
 export interface ProductTitleProps { 
   title?:string, 
   className?:string 
+  activeClass?:string
 }
 
 export interface ProductImageProps {
@@ -33,9 +28,13 @@ export interface ProductImageProps {
   className?: string
 }
 
+export interface ProductButtonsProps {
+  className?: string
+}
+
 export interface ProductCardHOCProps {
-  ({ product, children }: ProductCardProps): JSX.Element;
-  Title: ({ title, className }: ProductTitleProps) => JSX.Element;
-  Image: ({ img }: ProductImageProps) => JSX.Element;
-  Buttons: () => JSX.Element;
+  (Props: ProductCardProps): JSX.Element;
+  Title: (Props: ProductTitleProps) => JSX.Element;
+  Image: (Props: ProductImageProps) => JSX.Element;
+  Buttons: (Props: ProductButtonsProps) => JSX.Element;
 }

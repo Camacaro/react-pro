@@ -20,18 +20,21 @@ export const Shoppingpage = () => {
         flexDirection: 'row',
       }}>
         
-        <ProductCard product={product}>
-          <ProductImage />
+        <ProductCard 
+          product={product}
+          className="bg-dark text-white"
+        >
+          <ProductImage className='custom-imge' />
 
-          <ProductTitle />
+          <ProductTitle className="text-white text-bold" activeClass="active" />
 
-          <ProductButtons />
+          <ProductButtons className="custom-buttons" />
         </ProductCard>
 
 
         <ProductCard 
           product={product}
-          className="bg-dark"
+          className="bg-dark text-white"
         >
           <ProductCard.Image className='custom-imge' />
 
@@ -40,7 +43,7 @@ export const Shoppingpage = () => {
             className="text-white text-bold" 
           />
 
-          <ProductCard.Buttons />
+          <ProductCard.Buttons className="custom-buttons" />
         </ProductCard>
       </div>
     </div>
