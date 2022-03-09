@@ -48,3 +48,11 @@ export interface ProductCardHOCProps {
   Image: (Props: ProductImageProps) => JSX.Element;
   Buttons: (Props: ProductButtonsProps) => JSX.Element;
 }
+
+export interface ProductInCart extends Product {
+  count: number
+}
+
+export interface IShoppingCart {
+  [key: string]: ProductInCart
+}
