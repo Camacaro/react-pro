@@ -32,34 +32,35 @@ export const Shoppingpage = () => {
 
   const onProductCountChange = ({count, product}: {count: number, product: Product}) => {
 
-    // if(count === 0) {
-    //   setShoppingCart(prev => {
-    //     if(prev[product.id]) delete prev[product.id]
-    //     return {...prev}
-    //   });
-    // } else {
-    //   setShoppingCart(prev => ({
-    //     ...prev,
-    //     [product.id]: {
-    //       ...product,
-    //       count
-    //     }
-    //   }));
-    // }
 
-    setShoppingCart(prev => {
-      if(count === 0) {
-        const { [product.id]: toDelete, ...rest } = prev;
-        return {...rest}
-      }
+    setShoppingCart((prev) => {
+      
+      const productInCart: ProductInCart = prev[product.id] || {...product, count: 0}
 
-      return {
-        ...prev,
-        [product.id]: {
-          ...product,
-          count
+      if(Math.max(productInCart.count + count, 0) > 0) {
+        productInCart.count += count;
+        return {
+          ...prev,
+          [product.id]: productInCart
         }
       }
+
+      // Borrar el producto
+      const { [product.id]: toDelete, ...rest } = prev;
+      return {...rest}
+
+      // if(count === 0) {
+      //   const { [product.id]: toDelete, ...rest } = prev;
+      //   return {...rest}
+      // }
+
+      // return {
+      //   ...prev,
+      //   [product.id]: {
+      //     ...product,
+      //     count
+      //   }
+      // }
 
     });
   }
