@@ -15,16 +15,26 @@ export const Shoppingpage = () => {
       <ProductCard 
         product={product}
         className="bg-dark text-white"
+        initialValues={{
+          count: 4,
+          maxCount: 15
+        }}
       >
-        <ProductCard.Image className='custom-imge' style={{
-          boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
-        }} />
+        {
+          () => (
+            <>
+              <ProductCard.Image className='custom-imge' style={{
+                boxShadow: '10px 10px 10px rgba(0,0,0,0.5)',
+              }} />
 
-        <ProductCard.Title 
-          className="text-white text-bold" 
-        />
+              <ProductCard.Title 
+                className="text-white text-bold" 
+              />
 
-        <ProductCard.Buttons className="custom-buttons" />
+              <ProductCard.Buttons className="custom-buttons" />
+            </>
+          )
+        }
       </ProductCard>
 
     </div>

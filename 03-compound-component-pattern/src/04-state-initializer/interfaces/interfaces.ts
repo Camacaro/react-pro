@@ -4,13 +4,20 @@ export interface onChangeArgs {
   product:Product, 
   count:number
 }
+
+export interface InitialValues {
+  count?: number
+  maxCount?: number
+}
 export interface ProductCardProps {
   product: Product
-  children?: ReactElement | ReactElement[],
+  // children?: ReactElement | ReactElement[],
+  children: () => JSX.Element
   className?: string
   style?: CSSProperties
   onChange?: (args: onChangeArgs) => void
   value?: number
+  initialValues?: InitialValues
 }
 
 export interface Product {
@@ -22,7 +29,8 @@ export interface Product {
 export interface ProductContextProps {
   product: Product,
   counter: number,
-  increaseBy: (value:number) => void
+  increaseBy: (value:number) => void,
+  maxCount?: number
 }
 export interface ProductTitleProps { 
   title?:string, 
