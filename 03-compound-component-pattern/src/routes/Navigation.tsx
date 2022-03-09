@@ -2,7 +2,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, NavLink, Navigate } from "react-router-dom";
 // import { Shoppingpage } from "../02-component-patterns/pages/Shoppingpage";
 // import { Shoppingpage } from "../02-component-patterns-extensible-styles/pages/Shoppingpage";
-import { Shoppingpage } from "../03-control-props/pages/Shoppingpage";
+// import { Shoppingpage } from "../03-control-props/pages/Shoppingpage";
+import { Shoppingpage } from "../04-state-initializer/pages/Shoppingpage";
 
 import logo from "../logo.svg";
 
