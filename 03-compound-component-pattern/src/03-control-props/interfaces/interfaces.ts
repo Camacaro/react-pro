@@ -1,10 +1,15 @@
 import { CSSProperties, ReactElement } from 'react';
 
+export interface onChangeArgs {
+  product:Product, 
+  count:number
+}
 export interface ProductCardProps {
   product: Product
   children?: ReactElement | ReactElement[],
   className?: string
   style?: CSSProperties
+  onChange?: (args: onChangeArgs) => void
 }
 
 export interface Product {
