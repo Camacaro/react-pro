@@ -1,0 +1,17 @@
+Esto es la guia de crear un paquete de react con tsdx usando el PDF
+Este proyecto se encuentra en:
+https://github.com/Camacaro/jcamacaro-product-card
+
+yarn add -D @rollup/plugin-image
+yarn add -D postcss
+yarn add -D rollup-plugin-postcss
+
+Levantar el proyecto 
+yarn start
+
+Compilar proyecto
+yarn build
+
+
+En los test 
+yarn add -D identity-obj-proxy
