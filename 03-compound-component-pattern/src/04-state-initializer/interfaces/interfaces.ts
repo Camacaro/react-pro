@@ -12,7 +12,7 @@ export interface InitialValues {
 export interface ProductCardProps {
   product: Product
   // children?: ReactElement | ReactElement[],
-  children: () => JSX.Element
+  children: (args: ProductCardHandlers) => JSX.Element
   className?: string
   style?: CSSProperties
   onChange?: (args: onChangeArgs) => void
@@ -63,4 +63,13 @@ export interface ProductInCart extends Product {
 
 export interface IShoppingCart {
   [key: string]: ProductInCart
+}
+
+export interface ProductCardHandlers {
+  count: number;
+  isMaxCountReached: boolean;
+  maxCount?: number;
+  product: Product;
+  increaseBy: (value:number) => void;
+  reset: () => void;
 }
