@@ -43,3 +43,17 @@ Bases y temas avanzados de Formik, aquí veremos:
 * Construir validaciones basados en propiedades
 * Selects, Inputs
 * Ideas para validaciones
+
+## 06 - Storybook
+Esta sección está enfocada en aprender como integrar Storybook en nuestras aplicaciones de React para transformarla en una aplicación que nos ayudará a probar y desarrollar de una mejor manera nuestros componentes.
+
+Objectivo:
+* Integrar Storybook en una aplicación de React con Npx
+* Crear un componente desde cero
+* Crear historias
+* Configurar historias
+* Utilizar varios controles para las properties
+* Integración con TypeScript
+* Crear documentaciones de componentes
+* Desplegar documentación a diferentes sitios
+* Chromatic para desplegar Storybook de forma colaborativa

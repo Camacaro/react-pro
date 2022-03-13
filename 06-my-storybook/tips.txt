@@ -1,0 +1,7 @@
+1. yarn remove react-scripts
+2. Dejar solo el index.tsx y borrar la capeta public
+3. npx sb init
+4. yarn storybook
+
+Se borraron los script que normalmente se utilizan y se reemplazaron
+con los del storybook que salieron en el start y el build
