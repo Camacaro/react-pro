@@ -39,3 +39,7 @@ Bases y temas avanzados de Formik, aquí veremos:
 * Yup
   - Validaciones tipicas
   - Validaciones personalizadas
+* Construir inputs de forma dinámica
+* Construir validaciones basados en propiedades
+* Selects, Inputs
+* Ideas para validaciones
