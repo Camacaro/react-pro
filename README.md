@@ -24,3 +24,18 @@ En esta sección aprenderemos el patrón de construcción de componentes llamado
 
 ## 04 Desplegar componente (jcamacaro-product-card)
 Aquí realizaremos el primer despliegue a NPM de nuestro paquete.
+
+## 05 - Formik
+Bases y temas avanzados de Formik, aquí veremos:
+
+* useFormik
+* Formik Component
+* Formik Context
+* useField
+* Formik Custom Components
+* Custom Components
+* Metadata de los inputs
+* Abstractation
+* Yup
+  - Validaciones tipicas
+  - Validaciones personalizadas

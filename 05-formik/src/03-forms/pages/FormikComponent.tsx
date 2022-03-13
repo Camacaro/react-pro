@@ -1,4 +1,4 @@
-import { useFormik, Formik, Field, Form, ErrorMessage } from 'formik'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
 import '../styles/styles.css'
@@ -14,6 +14,8 @@ export const FormikComponent = () => {
           firstName: '',
           lastName: '',
           email: '',
+          terms: false,
+          jobType: '',
         }}
         onSubmit={(values) => {
           console.log('FormikBasicPage.onSubmit:', values)
@@ -27,6 +29,11 @@ export const FormikComponent = () => {
             .required('Requerido'),
           email: Yup.string()
             .email('Debe de ser un email válido')
+            .required('Requerido'),
+          terms: Yup.boolean()
+            .oneOf([true], 'Debe de aceptar las condiciones'),
+          jobType: Yup.string()
+            .notOneOf(['it-junior'], 'Esta opcion no es permitida')
             .required('Requerido'),
         })}
       >
@@ -44,6 +51,22 @@ export const FormikComponent = () => {
               <label htmlFor="email">Email Address</label>
               <Field name="email" type="email" />
               <ErrorMessage name='email' component="span" />
+
+              <label htmlFor="jobType">Job Type</label>
+              <Field name="jobType" as="select">
+                <option value="">Pick something</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="it-senior">it-senior</option>
+                <option value="it-junior">it-junior</option>
+              </Field>
+              <ErrorMessage name='jobType' component="span" />
+
+              <label>
+                <Field name="terms" type="checkbox" />
+                Terms and conditions
+              </label>
+              <ErrorMessage name='terms' component="span" />
               
               <button type='submit' disabled={!formik.isValid}>Create</button>
             </Form>
