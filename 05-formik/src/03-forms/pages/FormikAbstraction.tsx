@@ -1,8 +1,7 @@
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import { Mycheckbox } from '../components/Mycheckbox'
-import { MySelect } from '../components/MySelect'
-import { MyTextInput } from '../components/MyTextInput'
+
+import { Mycheckbox, MySelect, MyTextInput } from '../components'
 
 import '../styles/styles.css'
 
