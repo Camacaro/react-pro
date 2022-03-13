@@ -1,13 +1,14 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import { MyTextInput } from '../components/MyTextInput'
 
 import '../styles/styles.css'
 
-export const FormikComponent = () => {
+export const FormikAbstraction = () => {
 
   return (
     <div>
-      <h1>Formik Component</h1>
+      <h1>Formik Abstraction</h1>
 
       <Formik
         initialValues={{
@@ -40,18 +41,26 @@ export const FormikComponent = () => {
         {
           (formik) => (
             <Form noValidate autoComplete='off' onSubmit={formik.handleSubmit}>
-              <label htmlFor="firstName">First Name</label>
-              <Field name="firstName" type="text" placeholder="First name" />
-              <ErrorMessage name='firstName' component="span" />
-              
-              <label htmlFor="lastName">Last Name</label>
-              <Field name="lastName" type="text" />
-              <ErrorMessage name='lastName' component="span" />
-              
-              <label htmlFor="email">Email Address</label>
-              <Field name="email" type="email" />
-              <ErrorMessage name='email' component="span" />
 
+              <MyTextInput 
+                name='firstName'
+                label='Nombre'
+                placeholder='Ingrese su nombre'
+              />
+
+              <MyTextInput 
+                name='lastName'
+                label='lastName'
+                placeholder='Ingrese su apellido'
+              />
+
+              <MyTextInput 
+                name='email'
+                label='Email Address'
+                placeholder='Ingrese su email'
+                type='email'
+              />
+              
               <label htmlFor="jobType">Job Type</label>
               <Field name="jobType" as="select">
                 <option value="">Pick something</option>
