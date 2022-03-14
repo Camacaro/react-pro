@@ -5,3 +5,9 @@
 
 Se borraron los script que normalmente se utilizan y se reemplazaron
 con los del storybook que salieron en el start y el build
+
+Github Page
+Cambiar el nombre de la carpeta storybook-static (o mi build)
+por docs
+Este proceso lo continuo en el proyecto react-pro-storybook-github-page
+(https://github.com/Camacaro/storybook-react)
