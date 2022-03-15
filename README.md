@@ -57,3 +57,13 @@ Objectivo:
 * Crear documentaciones de componentes
 * Desplegar documentación a diferentes sitios
 * Chromatic para desplegar Storybook de forma colaborativa
+
+## 06 - Storybook - Pacakge module
+* Tomar nuestros componentes probados con Storybook
+* Generar los archivos de definición de TypeScript
+Generar el build de producción
+* Crear una acción en Github actions para crear el versionamiento semántico
+* Usar el versionamiento semantico para publicar la version del paquete
+* Publicar el paquete en NPM
+* Actualizar paquete
+* Consumir el paquete en aplicaciones externas.

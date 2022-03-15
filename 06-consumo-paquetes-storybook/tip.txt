@@ -1,0 +1,3 @@
+Este es un simple proyecto para importar la libreria 
+que se hizo de storybook (06-my-storybook) este proyecto se 
+encuentra independiente (react-pro-storybook-github-page)
