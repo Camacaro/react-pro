@@ -81,3 +81,7 @@ Service Worker
   - Network first
   - Cache Only
   - Network first with cache fallback
+
+### Nota
+Se uso my-app para tomar la configuracion del service worker del comando
+$ npx create-react-app my-app --template cra-template-pwa

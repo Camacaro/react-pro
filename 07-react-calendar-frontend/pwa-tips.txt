@@ -1,0 +1,16 @@
+Making a Progressive Web App
+
+Usando el comando 
+$ npx create-react-app my-app --template cra-template-pwa
+y migrando los archivos de configuracion que crea el comando a mi proyecto actual
+y se agregaron los package del otro proyecto tambien todo lo que tenga que ver 
+con workbox. 
+
+Agregar las configuracion del index.js 
+serviceWorkerRegistration
+
+Para hacer dev:
+Debo hacer los cambios en service-worker.js crear el build y luego 
+levantar el buil con 
+$ serve -s build
+para poder ver esos cambios del service worker
