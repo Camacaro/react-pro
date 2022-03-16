@@ -84,4 +84,15 @@ Service Worker
 
 ### Nota
 Se uso my-app para tomar la configuracion del service worker del comando
-$ npx create-react-app my-app --template cra-template-pwa
+``` npx create-react-app my-app --template cra-template-pwa```
+
+## 08 - React PWA Workbox
+Workbox es una herramienta que compro Google y ahora le da soporte, que permite configuraciones poderosas, rápidas y fáciles para el manejo de nuestras PWAs.
+* Detectar Online y Offline desde React
+* Workbox
+* Wizard
+* Estrategias
+* Background Sync
+* IndexedDB
+* Offline CRUD
+* Optimizaciones de nuestro service worker
