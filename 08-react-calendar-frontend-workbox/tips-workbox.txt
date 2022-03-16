@@ -1,0 +1,20 @@
+https://developers.google.com/web/tools/workbox/guides/generate-service-worker/cli
+
+$ npm install workbox-cli --global
+
+$ workbox wizard
+Pasaos a seguir
+0. (primero generar el build)
+1. Selecionar el build
+2. Dejar todo, (enter)
+3. Enter para alojar el service worker
+4. El otro es enter el archivo  root de workbox
+5. El ultuno N (no)
+
+Generar el SW  Automatico en el build - Primero generarl el build
+$ workbox generateSW workbox-config.js
+
+Desarrollo - Cambio en le Service worker
+$ yarn build
+$ workbox generateSW workbox-config.js
+$ serve -s build
