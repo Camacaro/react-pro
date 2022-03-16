@@ -67,3 +67,17 @@ Generar el build de producción
 * Publicar el paquete en NPM
 * Actualizar paquete
 * Consumir el paquete en aplicaciones externas.
+
+## 07 - React PWA
+Introducción técnica a las PWA con aplicaciones de React, la PWA no es una tecnología que sólo se aplique a React, pero aquí veremos como integrarlo de varias maneras.
+
+Fundamentos y formas te trabajar con la PWA usando la configuración por defecto que nos ofrece npx create-react-app
+Service Worker
+
+* Caché
+* Instalación
+* Fetch
+* Estrategias del caché
+  - Network first
+  - Cache Only
+  - Network first with cache fallback
