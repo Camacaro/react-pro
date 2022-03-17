@@ -96,3 +96,11 @@ Workbox es una herramienta que compro Google y ahora le da soporte, que permite 
 * IndexedDB
 * Offline CRUD
 * Optimizaciones de nuestro service worker
+
+## 09 - Mapbox
+* Uso de Mapbox con TypeScript
+* Rutas y direcciones
+* Marcadores
+* Comunicación entre contextos
+* Distancia entre dos puntos
+* Duración aproximada del viaje
