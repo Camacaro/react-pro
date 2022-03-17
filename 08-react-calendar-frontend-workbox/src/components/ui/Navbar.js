@@ -1,4 +1,11 @@
 import React from 'react'
+/**
+ * Esta libreria es ineficiente ya que por debajo 
+ * se esta haciendo una peticion constante a un servidor
+ * 
+ * 
+ */
+import { Offline, Online } from "react-detect-offline";
 import { useSelector, useDispatch } from 'react-redux'
 import { startLogout } from '../../actions/auth';
 
@@ -16,6 +23,13 @@ export const Navbar = () => {
             <span className="navbar-brand">
                 { name }
             </span>
+
+            <Online>
+              <span className='text-success'>Online</span>
+            </Online>
+            <Offline>
+              <span className='text-danger'>Offline - Peticiones serán guardadas </span>
+            </Offline>
             
             <button 
                 className="btn btn-outline-danger"

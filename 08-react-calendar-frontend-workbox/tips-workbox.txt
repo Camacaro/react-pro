@@ -11,6 +11,7 @@ Pasaos a seguir
 4. El otro es enter el archivo  root de workbox
 5. El ultuno N (no)
 
+Esto solo nos sirve solo si es una configuracion simple
 Generar el SW  Automatico en el build - Primero generarl el build
 $ workbox generateSW workbox-config.js
 
@@ -18,3 +19,9 @@ Desarrollo - Cambio en le Service worker
 $ yarn build
 $ workbox generateSW workbox-config.js
 $ serve -s build
+
+Si quiero una configuracion mas avanzada ver el archivo sw-template.js
+y hacer una configuracion en el archivo workbox-config.js
+swSrc: 'src/sw-template.js',
+Ahora ejecutar el siguieinte comando
+$ workbox injectManifest
