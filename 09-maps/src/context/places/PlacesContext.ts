@@ -1,10 +1,10 @@
 import { createContext, useContext } from 'react';
 import { Feature } from '../../interfaces/places';
-import { Latitude, Longitude } from './PlacesProvider';
+import { LongLat } from './PlacesProvider';
 
 export interface PlacesContextProps {
   isLoading: boolean;
-  userLocation?: [Longitude, Latitude];
+  userLocation?: LongLat;
   isLoadingPlaces: boolean;
   places: Feature[];
 

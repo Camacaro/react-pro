@@ -5,11 +5,13 @@ import { mapReducer } from './mapReducer';
 import { doSetMap, doSetMarkers } from './mapActions';
 import { usePlaceContext } from '../places/PlacesContext';
 import { LongLat } from '../places/PlacesProvider';
+import { directionApi } from '../../apis';
+import { DirectionsResponse } from '../../interfaces/directions';
 
 export interface MapState {
   isMapReady: boolean;
-  map?: Map
-  markers: Marker[]
+  map?: Map;
+  markers: Marker[];
 }
 
 interface Props {
@@ -74,6 +76,20 @@ export const MapProvider = ({ children }: Props) => {
 
   const getRouteBetweenPlaces = async (start: LongLat, end: LongLat) => {
     
+    const url = `${ start.join(',') };${ end.join(',') }`
+    const resp = await directionApi.get<DirectionsResponse>(url);
+    const { distance, duration, geometry } = resp.data.routes[0];
+    
+    let kms = distance / 1000;
+      kms = Math.round(kms * 100);
+      kms /= 100;
+
+    const durationInMinutes = Math.floor(duration / 60)
+
+    console.log({
+      kms,
+      durationInMinutes
+    })
   }
 
   return (

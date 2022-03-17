@@ -5,8 +5,8 @@ import { useMapContext } from '../context/map/MapContext';
 import { useState } from 'react';
 
 export const SearchResults = () => {
-  const { map } = useMapContext()
-  const { places, isLoadingPlaces } = usePlaceContext()
+  const { map, getRouteBetweenPlaces } = useMapContext()
+  const { places, isLoadingPlaces, userLocation } = usePlaceContext()
 
   const [activeId, setActiveId] = useState('');
 
@@ -19,6 +19,15 @@ export const SearchResults = () => {
       zoom: 14,
       center: [lng, lat]
     })
+  }
+
+  const getRoute = (place: Feature) => {
+
+    if(!userLocation) return;
+
+    const [ lng, lat ] = place.center;
+    
+    getRouteBetweenPlaces(userLocation, [ lng, lat ])
   }
   
   if(isLoadingPlaces) return <LoadingPlaces />
@@ -44,8 +53,9 @@ export const SearchResults = () => {
             </p>
 
             <button 
+              onClick={() => getRoute(place)}
               className={`btn btn-sm ${activeId === place.id ? 'btn-outline-light button-active' : 'btn-outline'}`} 
-              >
+            >
               Direcciones
             </button>
           </li>
