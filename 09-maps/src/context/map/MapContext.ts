@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import { Map, Marker } from "mapbox-gl";
+import { LongLat } from "../places/PlacesProvider";
 
 export interface MapContextProp {
   isMapReady: boolean;
@@ -8,6 +9,7 @@ export interface MapContextProp {
 
   // Methods
   setMap(map: Map): void;
+  getRouteBetweenPlaces: (start: LongLat, end: LongLat) => Promise<void>
 }
 
 export const MapContext = createContext({} as MapContextProp)

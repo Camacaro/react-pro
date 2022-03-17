@@ -4,6 +4,7 @@ import { useEffect, useReducer } from 'react';
 import { mapReducer } from './mapReducer';
 import { doSetMap, doSetMarkers } from './mapActions';
 import { usePlaceContext } from '../places/PlacesContext';
+import { LongLat } from '../places/PlacesProvider';
 
 export interface MapState {
   isMapReady: boolean;
@@ -71,11 +72,16 @@ export const MapProvider = ({ children }: Props) => {
     dispatch(doSetMap(map))
   }
 
+  const getRouteBetweenPlaces = async (start: LongLat, end: LongLat) => {
+    
+  }
+
   return (
     <MapContext.Provider
       value={{
         ...state,
-        setMap
+        setMap,
+        getRouteBetweenPlaces,
       }}
     >
       {children}
