@@ -7,3 +7,14 @@
   top: 0;
   width: 100vw;
 }
+
+.search-container {
+  background-color: #61DAFB;
+  border-radius: 5px;
+  padding: 5px;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 250px;
+  z-index: 999;
+}

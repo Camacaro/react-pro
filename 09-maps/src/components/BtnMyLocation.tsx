@@ -26,8 +26,7 @@ export const BtnMyLocation = () => {
         zIndex: 999,
         color: '#fff',
         backgroundColor: '#61DAFB',
-        width: '50px',
-        borderRadius: '30%',
+        width: '50px'
       }}>
       <i className="fas fa-solid fa-map-pin" aria-hidden="true"></i>
     </button>
