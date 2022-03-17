@@ -1,4 +1,4 @@
-import { Map, Marker, Popup } from 'mapbox-gl';
+import { AnySourceData, LngLatBounds, Map, Marker, Popup } from 'mapbox-gl';
 import { MapContext } from './MapContext';
 import { useEffect, useReducer } from 'react';
 import { mapReducer } from './mapReducer';
@@ -79,6 +79,7 @@ export const MapProvider = ({ children }: Props) => {
     const url = `${ start.join(',') };${ end.join(',') }`
     const resp = await directionApi.get<DirectionsResponse>(url);
     const { distance, duration, geometry } = resp.data.routes[0];
+    const { coordinates } = geometry;
     
     let kms = distance / 1000;
       kms = Math.round(kms * 100);
@@ -90,6 +91,84 @@ export const MapProvider = ({ children }: Props) => {
       kms,
       durationInMinutes
     })
+
+    /**
+     * Espacio en pantalla para mostrar la ruta entre los dos puntos
+     */
+    const bounds = new LngLatBounds(
+      start,
+      start
+    );
+
+    for (const coord of coordinates) {
+      const [ lng, lat ] = coord;
+
+      bounds.extend([ lng, lat ]);
+    }
+
+    state.map?.fitBounds(bounds, {
+      padding: 200
+    });
+
+    /**
+     * Polyline
+     * Dibujar dirección entre dos puntos
+     * 
+     * Mapbox llama a los lugares "Feature"
+     */
+    const sourceData: AnySourceData = {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'LineString',
+              coordinates,
+            }
+          }
+        ]
+      }
+    }
+
+    /**
+     * Preguntamos si existe alguna ruta previa (un polyline)
+     * Si existe, la borramos
+     * 
+     * El id ('RouteString') es una clave única para identificar el polyline
+     * si quiero mas de una ruta, tendré que agregar un id diferente
+     */
+    if(state.map?.getLayer('RouteString')) {
+      state.map?.removeLayer('RouteString');
+      state.map?.removeSource('RouteString');
+    }
+
+    /**
+     * Se agrega el Polyline al mapa
+     * que es como la ruta entre los dos puntos
+     * pero no se va a ver porque faltan los estilos
+     * y el primer parametro es un ID
+     */
+    state.map?.addSource('RouteString', sourceData);
+
+    /**
+     * Estilos para el Polyline
+     */
+    state.map?.addLayer({
+      id: 'RouteString',
+      type: 'line',
+      source: 'RouteString',
+      layout: {
+        'line-cap': 'round',
+        'line-join': 'round'
+      },
+      paint: {
+        'line-color': '#61DAFB', // black
+        'line-width': 3,
+      }
+    });
   }
 
   return (

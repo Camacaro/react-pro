@@ -56,7 +56,7 @@ export const SearchResults = () => {
               onClick={() => getRoute(place)}
               className={`btn btn-sm ${activeId === place.id ? 'btn-outline-light button-active' : 'btn-outline'}`} 
             >
-              Direcciones
+              Dirección
             </button>
           </li>
         ))
