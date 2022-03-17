@@ -9,7 +9,8 @@
 }
 
 .search-container {
-  background-color: #61DAFB;
+  /* background-color: #61DAFB; */
+  background-color: #fff;
   border-radius: 5px;
   padding: 5px;
   position: fixed;
@@ -21,4 +22,27 @@
 
 button:hover {
   background-color: #282c34!important;
+  color: #fff!important;
+  border-color: #fff!important;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.place-active {
+  background-color: #61dafb!important;
+}
+
+.button-active {
+  color: #282c34!important;
+  border-color: #282c34!important;
+}
+
+/* .place-active button {
+  color: #282c34!important;
+}
+
+.place-active button:hover {
+  color:  white!important;
+} */
