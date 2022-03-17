@@ -18,3 +18,7 @@
   width: 250px;
   z-index: 999;
 }
+
+button:hover {
+  background-color: #282c34!important;
+}

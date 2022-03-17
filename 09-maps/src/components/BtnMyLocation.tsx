@@ -18,7 +18,7 @@ export const BtnMyLocation = () => {
   return (
     <button 
       onClick={handleClick}
-      className='btn' 
+      className='btn btn-outline' 
       style={{
         position: 'fixed',
         right: '20px',

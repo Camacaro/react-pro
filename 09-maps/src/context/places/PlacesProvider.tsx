@@ -56,7 +56,6 @@ export const PlacesProvider = ({ children }: Props) => {
     return resp.data.features;
   }
   
-
   return (
     <PlacesContext.Provider
       value={{
