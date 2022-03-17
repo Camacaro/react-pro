@@ -3,9 +3,11 @@ import { Map } from 'mapbox-gl';
 
 import { usePlaceContext } from '../context/places/PlacesContext';
 import { Loading } from './Loading';
+import { useMapContext } from '../context/map/MapContext';
 
 export const MapView = () => {
   const { isLoading ,userLocation }  = usePlaceContext();
+  const { setMap } = useMapContext()
   
   const mapDiv = useRef<HTMLDivElement>(null);
 
@@ -26,6 +28,8 @@ export const MapView = () => {
       center: userLocation, // starting position [lng, lat]
       zoom: 14 // starting zoom
     });
+
+    setMap(map);
 
   }, [isLoading])
 

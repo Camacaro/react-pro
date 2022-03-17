@@ -3,7 +3,10 @@ import { Map } from "mapbox-gl";
 
 export interface MapContextProp {
   isMapReady: boolean;
-  map?: Map
+  map?: Map;
+
+  // Methods
+  setMap(map: Map): void;
 }
 
 export const MapContext = createContext({} as MapContextProp)
