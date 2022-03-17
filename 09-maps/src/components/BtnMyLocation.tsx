@@ -1,5 +1,6 @@
 import { useMapContext } from '../context/map/MapContext';
 import { usePlaceContext } from '../context/places/PlacesContext';
+
 export const BtnMyLocation = () => {
   const { map, isMapReady  } = useMapContext()
   const { userLocation }  = usePlaceContext()
@@ -17,14 +18,18 @@ export const BtnMyLocation = () => {
   return (
     <button 
       onClick={handleClick}
-      className='btn btn-primary' 
+      className='btn' 
       style={{
         position: 'fixed',
         right: '20px',
         top: '20px',
         zIndex: 999,
+        color: '#fff',
+        backgroundColor: '#61DAFB',
+        width: '50px',
+        borderRadius: '30%',
       }}>
-      Mi Ubicación
+      <i className="fas fa-solid fa-map-pin" aria-hidden="true"></i>
     </button>
   )
 }
