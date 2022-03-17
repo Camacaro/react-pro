@@ -2,6 +2,7 @@ import { PlacesContext } from "./PlacesContext";
 import { useEffect, useReducer } from 'react';
 import { placesReducer } from "./placesReducer";
 import { getUserLocation } from "../../helpers";
+import { searchApi } from "../../apis";
 
 export type Longitude = number;
 export type Latitude = number;
@@ -31,12 +32,29 @@ export const PlacesProvider = ({ children }: Props) => {
         payload: lngLat 
       }))
   }, [])
+
+  const searchPlacesByQuery = async (query: string) => {
+    if(query.length === 0) return []; // Limpiar lista de lugares
+    if(!state.userLocation) throw new Error('No hay ubicación del usuario');
+
+    const resp = await searchApi.get(`/${ query }.json`, {
+      params: {
+        proximity: state.userLocation.join(',')
+      }
+    })
+
+
+    console.log(resp.data);
+
+    return resp.data;
+  }
   
 
   return (
     <PlacesContext.Provider
       value={{
         ...state,
+        searchPlacesByQuery,
       }}
     >
       {children}

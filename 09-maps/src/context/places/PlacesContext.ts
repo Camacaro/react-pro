@@ -4,6 +4,9 @@ import { Latitude, Longitude } from './PlacesProvider';
 export interface PlacesContextProps {
   isLoading: boolean;
   userLocation?: [Longitude, Latitude];
+
+  // Methods
+  searchPlacesByQuery: (query: string) => Promise<any>;
 }
 
 export const PlacesContext = createContext({} as PlacesContextProps);
