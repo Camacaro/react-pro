@@ -1,4 +1,4 @@
-import { Map } from "mapbox-gl"
+import { Map, Marker } from 'mapbox-gl';
 import { MapActions } from "./mapReducer"
 
 export const doSetMap = (map: Map): MapActions => ({
@@ -6,3 +6,7 @@ export const doSetMap = (map: Map): MapActions => ({
   payload: map
 })
 
+export const doSetMarkers = (markers: Marker[]): MapActions => ({
+  type: 'SET_MARKERS',
+  payload: markers
+})
