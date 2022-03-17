@@ -1,9 +1,10 @@
 import { createContext, useContext } from 'react';
+import { Latitude, Longitude } from './PlacesProvider';
 
 
 export interface PlacesContextProps {
   isLoading: boolean;
-  userLocation?: [number, number];
+  userLocation?: [Longitude, Latitude];
 }
 
 

@@ -1,17 +1,16 @@
+import { Latitude, Longitude, PlacesState } from './PlacesProvider';
 
-
-export const placesReducer = (state, action) => {
+type PlacesAction =
+  | { type: 'SET_USER_LOCATION', playload: [Longitude, Latitude] }
+  
+export const placesReducer = (state: PlacesState, action: PlacesAction): PlacesState => {
   switch (action.type) {
-    case 'SET_PLACES':
+    case 'SET_USER_LOCATION':
       return {
         ...state,
-        places: action.places
+        userLocation: action.playload
       }
-    case 'ADD_PLACE':
-      return {
-        ...state,
-        places: [...state.places, action.place]
-      }
+
     default:
       return state;
   }

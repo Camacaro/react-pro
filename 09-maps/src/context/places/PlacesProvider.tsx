@@ -1,8 +1,13 @@
 import { PlacesContext } from "./PlacesContext";
+import { useReducer } from 'react';
+import { placesReducer } from "./placesReducer";
+
+export type Longitude = number;
+export type Latitude = number;
 
 export interface PlacesState {
   isLoading: boolean;
-  userLocation?: [number, number];
+  userLocation?: [Longitude, Latitude];
 
 }
 
@@ -16,11 +21,12 @@ const initialState: PlacesState = {
 }
 
 export const PlacesProvider = ({ children }: Props) => {
+  const [state, dispatch] = useReducer(placesReducer, initialState)
+
   return (
     <PlacesContext.Provider
       value={{
-        isLoading: true,
-        userLocation: undefined
+        ...state,
       }}
     >
       {children}
